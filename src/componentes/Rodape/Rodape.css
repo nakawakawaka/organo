@@ -1,0 +1,20 @@
+.rodapeOrgano {
+  background-color: #6278F7;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.rodapeOrgano ul {
+  display: flex;
+  gap: 32px;
+}
+
+.rodapeOrgano li {
+  list-style: none;
+}
+
+.rodapeOrgano h5 {
+  color: #fff;
+}
