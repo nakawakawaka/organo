@@ -2,7 +2,7 @@ import Colaborador from '../Colaborador';
 import hextoRgba from 'hex-to-rgba';
 import './Time.css';
 
-const Time = ({ time, colaboradores, aoDeletar, mudarCor }) => {
+const Time = ({ time, colaboradores, aoDeletar, mudarCor, aoFavoritar }) => {
   return (
     colaboradores.length > 0 && <section className='time' style={{ backgroundColor: hextoRgba(time.cor, 0.6) }}>
       <input value={time.cor} onChange={evento => mudarCor(evento.target.value, time.id)} type='color' className='input-cor' />
@@ -15,7 +15,7 @@ const Time = ({ time, colaboradores, aoDeletar, mudarCor }) => {
                   colaborador={colaborador}
                   corDeFundo={time.cor} 
                   aoDeletar={aoDeletar} 
-
+                  aoFavoritar={aoFavoritar}
                 />
       } )}
       </div>

@@ -10,36 +10,43 @@ function App() {
   const [times, setTimes] = useState([
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Programação',
       cor: '#57C278',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Front-end',
       cor: '#82CFFA',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Data Science',
       cor: '#A6D157',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Devops',
       cor: '#E06B69',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'UX e Design',
       cor: 'D86EBF',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Mobile',
       cor: '#FEBA05',
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Inovação e Gestã',
       cor: '#FF8A29',
     },
@@ -84,6 +91,13 @@ function App() {
     setTimes([ ...times, {  ...novoTime, id: uuidv4() } ])
   }
 
+  const resolverFavorito = (id) => {
+    setColaboradores(colaboradores.map(colaborador => {
+      if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador;
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -99,6 +113,7 @@ function App() {
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
         aoDeletar={deletarColaborador}
         mudarCor={mudarCorDoTime}
+        aoFavoritar={resolverFavorito}
       />)}
 
       <Rodape />
